@@ -3,7 +3,7 @@
 Este sistema tiene como finalidad listar un catalogo de productos desde un archivo JSON, cuenta con una serie de características para el filtrado de la información, además de emplear el LocalStorage para poder almacenar los filtros establecidos por el usuario en su sesión.
 
 ## Preview
-[Catalogo de Productos)](https://osmanjimenez.github.io/CatalogoHandlebars/)
+[Catalogo de Productos](https://osmanjimenez.github.io/CatalogoHandlebars/)
 
 ## Funcionamiento de las Características
 
