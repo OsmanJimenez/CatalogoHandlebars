@@ -398,6 +398,10 @@ $black-color: #000000;
                         border-radius: 9px;
                     }
                 }
+
+                .btn-filter:disabled {
+                    opacity: 1;
+                }
             }
         }
     }

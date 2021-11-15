@@ -385,4 +385,8 @@
   padding: 0px 10px;
   border-radius: 9px;
 }
+
+.modal .modal-dialog .modal-body .footer-modal .btn-filter:disabled {
+  opacity: 1;
+}
 /*# sourceMappingURL=style.css.map */
