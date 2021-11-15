@@ -1,10 +1,10 @@
-var Categorys = [];
+var Categories = [];
 var CategoryId;
 var Position;
 const filtroStatus = document.getElementsByClassName("filtroStatus");
 
 document.addEventListener("DOMContentLoaded", () => {
-    // console.log(Categorys);
+    // console.log(Categories);
     var quoteInfo = document.getElementById("content-products").innerHTML;
 
     var template = Handlebars.compile(quoteInfo);
@@ -93,24 +93,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     localCategory();
-    cleanCategorys();
+    cleanCategories();
     countFilter();
 });
 
 function addCategory($event) {
 
     this.CategoryId = $event.target.value;
-    this.Position = this.Categorys.indexOf(this.CategoryId);
+    this.Position = this.Categories.indexOf(this.CategoryId);
     // console.log("Este es el valor de la categoria: ", this.CategoryId);
     if (this.Position == -1) {
-        this.Categorys.push(this.CategoryId);
+        this.Categories.push(this.CategoryId);
     } else {
-        this.Categorys.splice(this.Position, 1);
+        this.Categories.splice(this.Position, 1);
     }
 
-    // console.log("Esto es el array: ", this.Categorys);
+    // console.log("Esto es el array: ", this.Categories);
  
-    cleanCategorys();
+    cleanCategories();
     countFilter();
 }
 
@@ -120,9 +120,9 @@ function filter() {
         filtroStatus[i].classList.add("hide");
     }
 
-    for (let i = 0; i < Categorys.length; i++) {
-        // console.log(Categorys[i]);
-        var valor = Categorys[i];
+    for (let i = 0; i < Categories.length; i++) {
+        // console.log(Categories[i]);
+        var valor = Categories[i];
         var elemento = document.getElementsByClassName(valor);
         // console.log("Este es el valor de elemento: ", valor);
 
@@ -131,7 +131,7 @@ function filter() {
         }
     }
 
-    localStorage.setItem('CategoryLocal', JSON.stringify(Categorys));
+    localStorage.setItem('CategoryLocal', JSON.stringify(Categories));
 }
 
 function clean() {
@@ -139,20 +139,20 @@ function clean() {
         filtroStatus[i].classList.remove("hide");
     }
 
-    Categorys = [];
-    cleanCategorys();
+    Categories = [];
+    cleanCategories();
     cleanCheck();
     localStorage.removeItem('CategoryLocal');
     countFilter();
 }
 
 // Disabled or Enabled of buttons 
-function cleanCategorys() {
+function cleanCategories() {
     const CleanButton = document.getElementById("btn-clean");
     const FilterButton = document.getElementById("btn-filter");
 
-    console.log(Categorys);
-    if (Categorys.length == 0) {
+    console.log(Categories);
+    if (Categories.length == 0) {
         CleanButton.disabled = true;
         FilterButton.disabled = true;
     } else {
@@ -179,15 +179,15 @@ function localCategory(){
         // console.log("Esta vacio");
     }else{
         // console.log("Tiene Algo", JSON.parse(array));
-        Categorys = JSON.parse(array);
+        Categories = JSON.parse(array);
         filter();
         countFilter();
-        for (let i = 0; i < Categorys.length; i++) {
-            if(Categorys[i] == 1){
+        for (let i = 0; i < Categories.length; i++) {
+            if(Categories[i] == 1){
                 check = document.getElementById("CategoryRubia");
-            }else if(Categorys[i] == 2){
+            }else if(Categories[i] == 2){
                 check = document.getElementById("CategoryMorena");
-            }else if(Categorys[i] == 3){
+            }else if(Categories[i] == 3){
                 check = document.getElementById("CategoryRoja");
             }
             check.checked = true;
@@ -196,7 +196,7 @@ function localCategory(){
 }
 
 function countFilter(){
-    var CategoryCount = Categorys.length;
+    var CategoryCount = Categories.length;
     var filterCount = document.getElementsByClassName('count-filter');
     
     for (let i = 0; i < filterCount.length; i++) {
