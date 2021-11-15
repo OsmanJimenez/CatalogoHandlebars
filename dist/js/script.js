@@ -1,14 +1,23 @@
 var Categories = [];
 var CategoryId;
 var Position;
+
 const filtroStatus = document.getElementsByClassName("filtroStatus");
 
 document.addEventListener("DOMContentLoaded", () => {
-    // console.log(Categories);
-    var quoteInfo = document.getElementById("content-products").innerHTML;
+    listProducts();
+    listCategories();
+    localCategory();
+    cleanCategories();
+    countFilter();
+});
 
-    var template = Handlebars.compile(quoteInfo);
-    var quoteData = template({
+function listProducts(){
+    // console.log(Categories);
+    let productsInfo = document.getElementById("content-products").innerHTML;
+
+    let template = Handlebars.compile(productsInfo);
+    let products = template({
         "products": [{
                 "name": "Cassels Milk Stou",
                 "description": "Cassels & Sons Brewing. Cerveza porter y stout.",
@@ -82,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ]
     });
 
-    document.getElementById("quoteData").innerHTML += quoteData;
+    document.getElementById("products").innerHTML += products;
 
     // Convert number to price
     let price = document.querySelectorAll(".price");
@@ -92,10 +101,35 @@ document.addEventListener("DOMContentLoaded", () => {
         price[i].innerHTML = "$" + num;
     }
 
-    localCategory();
-    cleanCategories();
-    countFilter();
-});
+}
+
+function listCategories(){
+    // console.log(Categories);
+    let categoriesInfo = document.getElementById("content-categories").innerHTML;
+
+    let template = Handlebars.compile(categoriesInfo);
+    let categories = template({
+        "categories": [{
+                "id": "CategoryRubia",
+                "name": "Rubia",
+                "value": 1
+            },
+            {
+                "id": "CategoryMorena",
+                "name": "Morena",
+                "value": 2
+            },
+            {
+                "id": "CategoryRoja",
+                "name": "Roja",
+                "value": 3
+            }
+        ]
+    });
+
+    document.getElementById("categories").innerHTML += categories;
+
+}
 
 function addCategory($event) {
 
@@ -122,13 +156,14 @@ function filter() {
 
     for (let i = 0; i < Categories.length; i++) {
         // console.log(Categories[i]);
-        var valor = Categories[i];
-        var elemento = document.getElementsByClassName(valor);
+        let valor = Categories[i];
+        let elemento = document.getElementsByClassName(valor);
         // console.log("Este es el valor de elemento: ", valor);
 
         for (let i = 0; i < elemento.length; i++) {
             elemento[i].classList.remove("hide");
         }
+
     }
 
     localStorage.setItem('CategoryLocal', JSON.stringify(Categories));
@@ -172,8 +207,8 @@ function cleanCheck(){
 }
 
 function localCategory(){
-    var array = localStorage.getItem('CategoryLocal');
-    var check;
+    let array = localStorage.getItem('CategoryLocal');
+    let check;
 
     if(array == null){
         // console.log("Esta vacio");
@@ -196,8 +231,8 @@ function localCategory(){
 }
 
 function countFilter(){
-    var CategoryCount = Categories.length;
-    var filterCount = document.getElementsByClassName('count-filter');
+    let CategoryCount = Categories.length;
+    let filterCount = document.getElementsByClassName('count-filter');
     
     for (let i = 0; i < filterCount.length; i++) {
         if(CategoryCount == 0){

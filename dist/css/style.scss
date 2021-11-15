@@ -300,6 +300,7 @@ $black-color: #000000;
         .modal-content {
             border: 1px solid $secondary-color;
             border-radius: 0px;
+            padding-right: 15px;
 
             .modal-header {
                 border-bottom: 1px solid $secondary-color;
@@ -324,6 +325,7 @@ $black-color: #000000;
 
         .modal-body {
             padding-top: 0px;
+            margin: 0px 14px 14px 14px;
 
             ul {
                 padding: 0;
@@ -368,40 +370,44 @@ $black-color: #000000;
             .footer-modal {
                 background-color: $footer-color;
 
-                .btn {
-                    width: 100%;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                    font-size: 14px;
-                    font-weight: bold;
-                    line-height: 20px;
-                }
-
-                .btn-clean {
-                    color: $dark-color;
+                .col-6 {
+                    padding: 3px;
                     background: $light-color;
-                    border: 1px solid $secondary-color;
-                }
-
-                .btn-filter {
-                    background: $primary-color;
-                    border: 1px solid $primary-color;
-                    color: $light-color;
-
-                    img {
-                        width: 18px;
+                    .btn {
+                        width: 100%;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        font-size: 14px;
+                        font-weight: bold;
+                        line-height: 20px;
                     }
-
-                    span {
+    
+                    .btn-clean {
+                        color: $dark-color;
                         background: $light-color;
-                        padding: 0px 10px;
-                        border-radius: 9px;
+                        border: 1px solid $secondary-color;
                     }
-                }
-
-                .btn-filter:disabled {
-                    opacity: 1;
-                }
+    
+                    .btn-filter {
+                        background: $primary-color;
+                        border: 1px solid $primary-color;
+                        color: $light-color;
+    
+                        img {
+                            width: 18px;
+                        }
+    
+                        span {
+                            background: $light-color;
+                            padding: 0px 10px;
+                            border-radius: 9px;
+                        }
+                    }
+    
+                    .btn-filter:disabled {
+                        opacity: 1;
+                    }
+                }              
             }
         }
     }

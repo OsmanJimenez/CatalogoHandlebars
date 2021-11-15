@@ -52,7 +52,7 @@
 <div class="catalog">
     <h1 class="title text-center">Cervezas</h1>
     <div class="container-fluid">
-        <div id="quoteData"></div>
+        <div id="products"></div>
 
         <div class="card section-catalog">
             <div class="card-body next">
@@ -140,27 +140,7 @@
             <div class="modal-body">
                 <ul>
                     <li>
-                        <div class="form-check">
-                            <label class="form-check-label" for="CategoryRubia">
-                                Rubia
-                            </label>
-                            <input class="form-check-input check" value="1" onclick="addCategory(event)" type="checkbox"
-                                id="CategoryRubia">
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="CategoryMorena">
-                                Morena
-                            </label>
-                            <input class="form-check-input check" value="2" onclick="addCategory(event)" type="checkbox"
-                                id="CategoryMorena">
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label" for="CategoryRoja">
-                                Roja
-                            </label>
-                            <input class="form-check-input check" value="3" onclick="addCategory(event)" type="checkbox"
-                                id="CategoryRoja">
-                        </div>
+                        <div id="categories"></div>
                     </li>
                 </ul>
                 <div class="row footer-modal">
@@ -213,6 +193,20 @@
                     <h5 class="text-center add-cart">AGREGAR</h5>
                 </div>
             </div>
+        </div>
+        {{/each}}
+    </div>  
+</script>
+
+<script id="content-categories" type="text/x-handlebars-template">
+    <div class="row">
+        {{#each categories}} 
+        <div class="form-check">
+            <label class="form-check-label" for="{{id}}">
+                {{name}}
+            </label>
+            <input class="form-check-input check" value="{{value}}" onclick="addCategory(event)" type="checkbox"
+                id="{{id}}">
         </div>
         {{/each}}
     </div>  
