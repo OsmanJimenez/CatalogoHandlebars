@@ -1,0 +1,404 @@
+$primary-color: #0000A3;
+$secondary-color: #E5E5E5;
+$dark-color: #101111;
+$light-color: #FFFFFF;
+$gray-color: #6D7275;
+$banner-color: #0F0F0F;
+$footer-color: #F4F4F4;
+$black-color: #000000;
+
+* {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    color: $dark-color;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bg-dark {
+    background: $banner-color !important;
+}
+
+.icon {
+    filter: invert(100%);
+}
+
+.hide {
+    display: none;
+}
+
+/* Start NavBar */
+
+.navbar {
+    width: 100%;
+    z-index: 1;
+
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 30px;
+    }
+}
+
+.navbar-dark {
+    .navbar-toggler {
+        color: $light-color;
+        border-color: $black-color;
+        padding: 5px;
+        position: relative;
+        display: inline-block;
+
+        label {
+            font-size: 10px;
+            background: $primary-color;
+            color: $light-color;
+            padding: 3px;
+            vertical-align: top;
+            border-radius: 50%;
+            margin-left: -12px;
+            margin-top: -4px;
+            position: absolute;
+            width: 15px;
+        }
+    }
+}
+
+/* End NavBar */
+
+/* Start Catalog */
+
+.catalog {
+    padding: 80px 10px 50px 10px;
+
+    .title {
+        margin: 30px 0px 20px 0px;
+        font-size: 35px;
+        line-height: 38px;
+        font-weight: 600;
+    }
+
+    .pad-10 {
+        padding: 10px;
+    }
+
+    .bottom {
+        background-color: $light-color;
+        border-top: 0px;
+    }
+
+    .section-catalog {
+        margin-top: 10px;
+    }
+
+    .card {
+
+        .card-body {
+            padding: 10px;
+
+            .card-title {
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 20px;
+            }
+
+            .description {
+                font-weight: normal;
+                font-size: 11px;
+                line-height: 16px;
+                color: $gray-color;
+            }
+        }
+
+        .price {
+            height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        .card-footer {
+            .add-cart {
+                height: 21px;
+                font-size: 14px;
+                line-height: 20px;
+                color: $primary-color;
+                margin: 0px 0px;
+                font-weight: bold;
+            }
+
+            .button-cart {
+                background-color: $footer-color;
+            }
+        }
+
+        .next {
+            padding: 15px;
+
+            .description {
+                margin: 0px;
+                font-size: 11.8px;
+                line-height: 16px;
+                color: $dark-color;
+            }
+
+            .section {
+                margin: 0px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 32px;
+                color: $dark-color;
+            }
+
+            .arrow {
+                display: flex;
+                justify-content: right;
+                align-items: center;
+            }
+        }
+
+    }
+}
+
+/* End Catalog */
+
+/* Start Filter */
+
+.filter {
+    display: flex;
+    justify-content: center;
+
+    .btn-filter {
+        position: fixed;
+        bottom: 25px;
+        padding: 5px 16px;
+        background: $primary-color;
+        border-radius: 4px;
+        border-color: $primary-color;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: $light-color;
+        margin: 3px 7px;
+
+        span {
+            background: $light-color;
+            padding: 0px 10px;
+            border-radius: 9px;
+        }
+    }
+
+    .icon {
+        width: 18px;
+    }
+}
+
+/* End Filter */
+
+/* Start Footer */
+
+.contact {
+    background-color: $banner-color;
+    padding: 45px 0px;
+
+    h2 {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: $light-color;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 35px;
+
+        .col-3 {
+            max-width: 92px;
+
+            .btn {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                margin: 15px 0;
+
+                img {
+                    width: 30px;
+                }
+            }
+
+            h3 {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 11px;
+                line-height: 16px;
+                color: $light-color;
+
+            }
+        }
+
+    }
+
+    .links {
+        padding: 25px 0px;
+        background-color: $light-color;
+
+        .tags {
+            ul {
+                padding: 0;
+
+                li {
+                    text-align: center;
+                    list-style: none;
+                    margin: 18px 0px;
+
+                    a {
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: $dark-color;
+                        text-decoration: none;
+                    }
+
+                    hr {
+                        width: 40px;
+                        margin: 35px auto;
+                    }
+
+                    .btn {
+                        background-color: $primary-color;
+                        border-color: $primary-color;
+                        width: 30px;
+                        height: 30px;
+                        padding: 2px;
+                        border-radius: 50%;
+
+                        img {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Footer */
+
+/* Start Modal */
+.modal {
+    .modal-dialog {
+        position: fixed;
+        top: auto;
+        right: 0 px;
+        left: 0 px;
+        bottom: 0;
+        width: 100%;
+        margin: 0px;
+        max-width: 100%;
+
+        .modal-content {
+            border: 1px solid $secondary-color;
+            border-radius: 0px;
+
+            .modal-header {
+                border-bottom: 1px solid $secondary-color;
+
+                .btn-close {
+                    margin-top: -64px;
+                    color: $black-color;
+                    background-color: $light-color;
+                    opacity: 1;
+                    border: 1px solid $secondary-color;
+                }
+
+                .modal-title {
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 29px;
+                    color: $dark-color;
+                }
+            }
+
+        }
+
+        .modal-body {
+            padding-top: 0px;
+
+            ul {
+                padding: 0;
+
+                li {
+                    list-style: none;
+
+                    .form-check {
+                        padding: 10px 0;
+                        border-bottom: 1px solid $secondary-color;
+
+                        label {
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 20px;
+                            color: $dark-color;
+                        }
+
+                        .check {
+                            float: right;
+                        }
+                    }
+
+                }
+            }
+
+            .form-check-input {
+                width: 20px;
+                height: 20px;
+                margin-top: 0px;
+                border: 1px solid $secondary-color;
+            }
+
+            .form-check-input:checked {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                width: 20px;
+                height: 20px;
+                margin-top: 0px;
+            }
+
+            .footer-modal {
+                background-color: $footer-color;
+
+                .btn {
+                    width: 100%;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    font-weight: bold;
+                    line-height: 20px;
+                }
+
+                .btn-clean {
+                    color: $dark-color;
+                    background: $light-color;
+                    border: 1px solid $secondary-color;
+                }
+
+                .btn-filter {
+                    background: $primary-color;
+                    border: 1px solid $primary-color;
+                    color: $light-color;
+
+                    img {
+                        width: 18px;
+                    }
+
+                    span {
+                        background: $light-color;
+                        padding: 0px 10px;
+                        border-radius: 9px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products-Catalog</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="dist/css/style.css">
+
+</head>
+<!-- Start Navbar -->
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-brand">
+            <button class="navbar-toggler" type="button" aria-label="Boton-Menu" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <img class="icon" src="dist/img/svg/menu.svg" alt="" width="" height="">
+            </button>
+            <button class="navbar-toggler" type="button" aria-label="Boton-Logo">
+                <img class="icon" src="dist/img/svg/logo.svg" alt="" width="" height="">
+            </button>
+        </div>
+
+        <div class="d-flex">
+            <button class="navbar-toggler" type="button" aria-label="Boton-Buscar">
+                <img class="icon" src="dist/img/svg/search.svg" alt="" width="" height="">
+            </button>
+            <button class="navbar-toggler" type="button" aria-label="Boton-Carrito">
+                <img class="icon" src="dist/img/svg/cart.svg" alt="" width="" height="">
+                <label CssClass="badge badge-warning">9</label>
+            </button>
+        </div>
+
+    </div>
+
+</nav>
+<!-- End Navbar -->
+
+<!-- Start Catalog -->
+
+<div class="catalog">
+    <h1 class="title text-center">Cervezas</h1>
+    <div class="container-fluid">
+        <div id="quoteData"></div>
+
+        <div class="card section-catalog">
+            <div class="card-body next">
+                <div class="row">
+                    <div class="col-10">
+                        <p class="card-text description">Sigue mercando</p>
+                        <h2 class="card-title section">Vinos</h2>
+                    </div>
+                    <div class="col-2 arrow">
+                        <img src="dist/img/svg/arrow-right.svg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- End Catalog -->
+
+<!-- Start Filter -->
+
+<div class="filter">
+    <button type="button" class="btn btn-filter" data-bs-toggle="modal" data-bs-target="#filtersModal"
+        aria-label="Boton-Filtrar">FILTRAR <img class="icon" src="dist/img/svg/filters.svg" alt="">
+        <span id="count-filter" class="count-filter"> </span>
+    </button>
+</div>
+
+<!-- End Filter -->
+
+<!-- Start Footer -->
+<footer>
+    <div class="contact">
+        <h2 class="text-center">¿Podemos ayudarle?</h2>
+        <div class="row">
+            <div class="col-3 text-center">
+                <button class="btn btn-light" type="submit" aria-label="Boton-Chat">
+                    <img src="dist/img/svg/intercom.svg" alt="">
+                </button>
+                <h3 class="text-center">CHAT</h3>
+            </div>
+            <div class="col-3 text-center">
+                <button class="btn btn-light" type="submit" aria-label="Boton-Llamar">
+                    <img src="dist/img/svg/phone.svg" alt="">
+                </button>
+                <h3 class="text-center">LLAMAR</h3>
+            </div>
+
+        </div>
+
+        <div class="links">
+            <div class="tags">
+                <ul>
+                    <li><a href="#">SOBRE NOSOTROS</a></li>
+                    <li><a href="#">MEDIDAS DE SEGURIDAD (COVID-19)</a></li>
+                    <li><a href="#">CÓMO MERCAR</a></li>
+                    <li><a href="#">PROVEEDORES</a></li>
+                    <li><a href="#">CONTÁCTENOS</a></li>
+                    <li><a href="#">ZONA DE COBERTURA</a></li>
+                    <li>
+                        <hr>
+                    </li>
+                    <li><button class="btn btn-primary" type="submit" aria-label="Boton-Tratamiento">
+                            <img src="dist/img/svg/instagram.svg" class="icon" alt="">
+                        </button></li>
+                    <li><a href="#">POLÍTICA DE TRATAMIENTO DE DATOS PERSONALES</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</footer>
+<!-- End Footer -->
+
+<!-- Start Modal -->
+<div class="modal fade" id="filtersModal" tabindex="-1" aria-labelledby="filtersModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="filtersModal">Filtros</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar-Modal"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>
+                        <div class="form-check">
+                            <label class="form-check-label" for="CategoryRubia">
+                                Rubia
+                            </label>
+                            <input class="form-check-input check" value="1" onclick="addCategory(event)" type="checkbox"
+                                id="CategoryRubia">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="CategoryMorena">
+                                Morena
+                            </label>
+                            <input class="form-check-input check" value="2" onclick="addCategory(event)" type="checkbox"
+                                id="CategoryMorena">
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label" for="CategoryRoja">
+                                Roja
+                            </label>
+                            <input class="form-check-input check" value="3" onclick="addCategory(event)" type="checkbox"
+                                id="CategoryRoja">
+                        </div>
+                    </li>
+                </ul>
+                <div class="row footer-modal">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-clean" id="btn-clean" data-bs-dismiss="modal"
+                            onclick="clean()" aria-label="Boton-Limpiar">LIMPIAR</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-filter" id="btn-filter" onclick="filter()"
+                            data-bs-toggle="modal" data-bs-target="#filtersModal" aria-label="Boton-Filtro">FILTRAR
+                            <img class="icon" src="dist/img/svg/filters.svg" alt="">
+                            <span id="count-filter" class="count-filter"> </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+<body>
+
+</body>
+<!-- Handlebars -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<!-- JS -->
+<script src="dist/js/script.js"></script>
+
+<script id="content-products" type="text/x-handlebars-template">
+    <div class="row">
+        {{#each products}} 
+        <div class="col-6 col-xs-6 col-sm-4 col-md-4 col-lg-3 pad-10 {{filterId}} filtroStatus">
+            <div class="card h-100">
+                <img src="dist/img/img/{{img}}" class="card-img-top pad-10" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title">{{name}}</h2>
+                    <p class="card-text description">{{description}}</p>
+                </div>
+                <div class="card-footer bottom">
+                    <h3 class="card-text price">{{price}}</h3>
+                </div>
+                <div class="card-footer button-cart">
+                    <h5 class="text-center add-cart">AGREGAR</h5>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>  
+</script>
+
+</html>
